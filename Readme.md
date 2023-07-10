@@ -1,4 +1,4 @@
-### React Drinks
+### React Drinks by Silvana Zalazar💕
 
 # Proyecto de Bebidas a modo de practica impartida por Prof. Jonatan Céspedes para Formar Factory.
 
