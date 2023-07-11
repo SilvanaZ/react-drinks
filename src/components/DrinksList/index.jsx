@@ -4,6 +4,8 @@ import DrinkCard from '../DrinkCard';
 
 export default function DrinkList () {
     const { drinks } = useDrinks();
+
+    
     if(drinks.length === 0) {
         return (
             <Row className="p-5 m-5">
