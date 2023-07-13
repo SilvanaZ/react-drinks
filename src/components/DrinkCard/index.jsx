@@ -6,13 +6,13 @@ import { useCart } from '../../hooks/useCart';
 
 export default function DrinkCard ({ drink }){
     const { handleDrinkIdClick, handleModalClick } = useDrinks();
-const { addToCart } = useCart();
+    const { addToCart } = useCart();
+    function handleAddToCart (drink) {
+        addToCart(drink)
+    }
 
-function handleAddToCart(drink){
-addToCart(drink)
-}
     return (
-        <Col md={6} ld={3} >
+        <Col md={3} ld={3} >
             <Card className="mb-4">
                 <Card.Img 
                     variant="top"
@@ -23,14 +23,14 @@ addToCart(drink)
                     <Card.Title>
                         {drink.strDrink}
                     </Card.Title>
-                    < Card.Subtitle style={{marginBottom:2}}>
+                    <Card.Subtitle>
                         {drink.price}
                     </Card.Subtitle>
                     <Row>
-                    <Col>
-                        <Button 
+                    <Col className="w-50 p-3 mt-2">
+                    <Button 
                         variant="warning"
-                        className= "text-upperase"
+                        className= "w-100 text-uppercase mt-2"
                         onClick={() => {
                             handleModalClick();
                             handleDrinkIdClick(drink.idDrink)
@@ -38,11 +38,12 @@ addToCart(drink)
                         ver receta
                     </Button>
                     </Col>
-                    <Col>
-                        <Button 
+                    <Col className="w-50 p-3 mt-2">
+                    <Button 
                         variant="primary"
                         className= "text-uppercase"
-                        onClick={() => handleAddToCart(drink)}>
+                        onClick={() => handleAddToCart(drink)}
+                    >
                         Agregar al carrito
                     </Button>
                     </Col>
@@ -58,6 +59,6 @@ DrinkCard.propTypes = {
         strDrinkThumb: PropTypes.string.isRequired,
         strDrink: PropTypes.string.isRequired,
         idDrink: PropTypes.string.isRequired,
-        price: PropTypes.number.isRequired
+        price: PropTypes.string.isRequired
     }).isRequired,
 };
