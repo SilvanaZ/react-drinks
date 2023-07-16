@@ -1,0 +1,37 @@
+.card{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 4px;
+    border-bottom: 1px solid grey;
+}
+.img{
+    width: 5px;
+    height: 5px;
+    object-fit: cover;
+}
+.card span{
+    display: inline-block;
+    padding: 8px;
+}
+.counter{
+    border: thin solid grey;
+    border-radius: 4px;
+    padding: 4px;
+}
+.counter button{
+    border: none;
+    background-color: transparent;
+    width: 24px;
+    color: grey;
+    border-radius: 4px;
+    transition: all 0.5s ease;
+}
+.counter button:hover{
+    background-color: lightgrey;
+    color: white;
+}
+.iconTrash{
+    color: red;
+    cursor: pointer;
+}

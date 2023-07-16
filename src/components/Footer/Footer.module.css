@@ -1,7 +1,8 @@
-.footer{
-    background: linear-gradient(to right, #fc4a1a, #f7b733);
-    color: white;
+.footer {
+    background: linear-gradient(to right, #fc4b1aad, #f7b633a4);
+    color: #222;
     text-align: center;
+    position: sticky; 
 }
 .footer h1{
     font-family: "Outfit", sans-serif;

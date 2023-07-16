@@ -14,7 +14,7 @@ export default function DrinkList () {
         )
     }
     return (
-        <Row className="mt-5">
+        <Row className={"mt-5"}>
         {
             drinks.map((drink) => {
                 return(

@@ -1,9 +1,18 @@
-.header{
-    background: linear-gradient(to right, #fc4a1a, #f7b733);
-    color: white;
+.header {
+    background: linear-gradient(to right, #fc4b1aad, #f7b633a4);
+    color: #333;
     text-align: center;
 }
-.header h1{
+
+.header h1 {
+    display: inline-block; /* Añadido */
     font-family: "Outfit", sans-serif;
     font-weight: 900;
+}
+
+.icon {
+    cursor: pointer;
+    color: #333;
+    margin-left: 1rem;
+    vertical-align: middle; /* Añadido */
 }

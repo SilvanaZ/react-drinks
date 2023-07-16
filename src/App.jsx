@@ -10,14 +10,14 @@ function App() {
   return (
     <ModalProvider>
       <CartProvider>
-    <MainLayout>
-      <DrinksProvider>
-      <CategoriesProvider>
-          <AppRoutes />
-      </CategoriesProvider>
-      </DrinksProvider>
-    </MainLayout>
-    </CartProvider>
+        <MainLayout>
+          <DrinksProvider>
+            <CategoriesProvider>
+              <AppRoutes />
+            </CategoriesProvider>
+          </DrinksProvider>
+        </MainLayout>
+      </CartProvider>
     </ModalProvider>
   )
 }

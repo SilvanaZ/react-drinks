@@ -3,55 +3,52 @@ import useDrinks from '../../hooks/useDrinks';
 import PropTypes from 'prop-types';
 import { useCart } from '../../hooks/useCart';
 
-
-export default function DrinkCard ({ drink }){
+export default function DrinkCard({ drink }) {
     const { handleDrinkIdClick, handleModalClick } = useDrinks();
     const { addToCart } = useCart();
-    function handleAddToCart (drink) {
-        addToCart(drink)
+
+    function handleAddToCart(drink) {
+        addToCart(drink);
     }
 
     return (
-        <Col md={3} ld={3} >
+        <Col md={3} ld={3}>
             <Card className="mb-4">
-                <Card.Img 
+                <Card.Img
                     variant="top"
                     src={drink.strDrinkThumb}
                     alt={`Imagen de ${drink.strDrink}`}
                 />
                 <Card.Body>
-                    <Card.Title>
-                        {drink.strDrink}
-                    </Card.Title>
-                    <Card.Subtitle>
-                        {drink.price}
-                    </Card.Subtitle>
+                    <Card.Title>{drink.strDrink}</Card.Title>
+                    <Card.Subtitle>$ {drink.price.toString()}</Card.Subtitle> {/* Convertir a cadena de texto */}
                     <Row>
-                    <Col className="w-50 p-3 mt-2">
-                    <Button 
-                        variant="warning"
-                        className= "w-100 text-uppercase mt-2"
-                        onClick={() => {
-                            handleModalClick();
-                            handleDrinkIdClick(drink.idDrink)
-                        }}>
-                        ver receta
-                    </Button>
-                    </Col>
-                    <Col className="w-50 p-3 mt-2">
-                    <Button 
-                        variant="primary"
-                        className= "text-uppercase"
-                        onClick={() => handleAddToCart(drink)}
-                    >
-                        Agregar al carrito
-                    </Button>
-                    </Col>
+                        <Col className="w-50 p-3 mt-2">
+                            <Button
+                                variant="warning"
+                                className="w-100 text-uppercase mt-2"
+                                onClick={() => {
+                                    handleModalClick();
+                                    handleDrinkIdClick(drink.idDrink);
+                                }}
+                            >
+                                ver receta
+                            </Button>
+                        </Col>
+                        <Col className="w-50 p-3 mt-2">
+                            <Button
+                                variant="primary"
+                                className="text-uppercase"
+                                onClick={() => handleAddToCart(drink)}
+                            >
+                                Agregar al carrito
+                            </Button>
+                        </Col>
                     </Row>
                 </Card.Body>
             </Card>
         </Col>
-    )
+    );
 }
 
 DrinkCard.propTypes = {
@@ -59,6 +56,7 @@ DrinkCard.propTypes = {
         strDrinkThumb: PropTypes.string.isRequired,
         strDrink: PropTypes.string.isRequired,
         idDrink: PropTypes.string.isRequired,
-        price: PropTypes.string.isRequired
+        price: PropTypes.oneOfType([PropTypes.string, PropTypes.number]) // Acepta número o cadena de texto
+            .isRequired,
     }).isRequired,
 };

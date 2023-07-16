@@ -4,19 +4,21 @@ import PropTypes from 'prop-types';
 const ModalContext = createContext();
 
 const ModalProvider = ({ children }) => {
-    const [ isOpen, setIsOpen ] = useState(false);
+
+    const [isOpen, setIsOpen] = useState(false);
 
     function toogleModal() {
         setIsOpen(!isOpen)
     }
 
-    const modalValues ={
+    const modalValues = {
         isOpen,
         toogleModal
     }
 
-    return(
-        <ModalContext.Provider value={{ modalValues }}>
+
+    return (
+        <ModalContext.Provider value={modalValues}>
             {children}
         </ModalContext.Provider>
     )

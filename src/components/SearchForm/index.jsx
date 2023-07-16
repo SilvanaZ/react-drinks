@@ -91,7 +91,7 @@ export default function SearchForm() {
                         <Row className="justify-content-end">
                             <Col md={3}>
                                 <button
-                                    className="btn btn-danger text-uppercase w-100"
+                                    className={"btn btn-secondary text-uppercase w-100"}
                                     type="submit"
                                     disabled={loading}
                                 >

@@ -5,10 +5,14 @@ import useModal from "../../hooks/useModal";
 
 export default function Header () {
     const { toogleModal } = useModal();
+    
     return (
         <header className={`py-5 ${styles.header}`}>
+            <nav className={`navbar navbar-expand-lg navbar-dark bg-dark ${styles.header}`}>
             <h1>Buscador de bebidas</h1>
-            <FontAwesomeIcon icon={faCartShopping} onClick={toogleModal}/>
+            <FontAwesomeIcon icon={faCartShopping} className={styles.icon} onClick={() => toogleModal()}/>
+            </nav>
         </header>
     )
+    
 }
