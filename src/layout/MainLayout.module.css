@@ -1,6 +1,5 @@
 .main{
-    background-image: url('https://cdn0.matrimonio.com.co/article-vendor/4191/3_2/1280/jpg/-r7a1887low_10_94191-160502000838041.jpeg');
-    background-size: cover;
+    background-color: rgb(250, 238, 222);
     height: auto;
     min-height: 100vh;
 }
