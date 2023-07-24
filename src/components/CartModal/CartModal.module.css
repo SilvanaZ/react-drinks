@@ -79,12 +79,20 @@
     width: 100%;
 }
 .btnContainer button.clearCart{
-    background-color: lightblue;
-    color: grey;
+    background-color: pink;
+    color: #1b1b1b;
+}
+.btnContainer button.clearCart:hover{
+    background:red;
+    background: linear-gradient(90deg, #c92813d0 0%, #ff0000 100%);
 }
 .btnContainer button.confirmCart{
-    background-color: lightgoldenrodyellow;
-    color: grey;
+    background-color:lightgreen;
+    color: #1b1b1b;
+}
+.btnContainer button.confirmCart:hover{
+    background: #ff4800;
+    background: linear-gradient(90deg, #60fa3ad0 0%, #0957ff 100%);
 }
 aside{
     padding: 10px;

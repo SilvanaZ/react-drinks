@@ -1,11 +1,11 @@
 .header {
-    background: linear-gradient(to right, #fc4b1aad, #f7b633a4);
+    background: linear-gradient(to right, #ff2609, #ffd900);
     color: #333;
     text-align: center;
 }
 
 .header h1 {
-    display: inline-block; /* Añadido */
+    display: inline-block;
     font-family: "Outfit", sans-serif;
     font-weight: 900;
 }
@@ -13,6 +13,24 @@
 .icon {
     cursor: pointer;
     color: #333;
-    margin-left: 1rem;
-    vertical-align: middle; /* Añadido */
+    float:initial;
+}
+
+.btn {
+    font-size: 17px;
+    padding: 0.5em 2em;
+    border: transparent;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+    background: orangered;
+    color: white;
+    border-radius: 4px;
+}
+
+.btn:hover {
+    background: rgb(2, 0, 36);
+    background: linear-gradient(90deg, #ff7b00d0 0%, #ff2609 100%);
+}
+
+.btn:active {
+    transform: translate(0em, 0.2em);
 }

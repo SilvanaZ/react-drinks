@@ -28,7 +28,7 @@
     transition: all 0.5s ease;
 }
 .counter button:hover{
-    background-color: lightgrey;
+    background-color: lightcoral;
     color: white;
 }
 .iconTrash{

@@ -17,10 +17,10 @@ export default function Header () {
             currentUser && (
                 <>
                 <div className={styles.bienvenido}>
-                <h2>Bienvenid@ {currentUser.name} !</h2>
+                <h2>¡Bienvenid@ {currentUser.name} !</h2>
                 </div>
                 <div className={styles.cartUser}>
-                <button onClick={logout}>Cerrar sesion</button>
+                <button className={styles.btn} onClick={logout}>Cerrar sesion</button>
                 <br/>
                 <FontAwesomeIcon icon={faCartShopping} className={styles.icon} onClick={() => toogleModal()}/>
                 </div>

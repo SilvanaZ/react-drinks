@@ -6,6 +6,7 @@ import { ProtectedRoute } from "./ProtectedRoute";
 import SignUp from "../pages/user/SignUp";
 import SignIn from "../pages/user/SignIn";
 
+
 export default function AppRoutes () {
     return (
             <Routes>
@@ -13,6 +14,7 @@ export default function AppRoutes () {
                 <Route path="/register" element={<SignUp />} />
                 <Route path="/" element={<ProtectedRoute/>}>
                     <Route path="/" element={<Home />} />
+                    
                 </Route>
                 <Route path="*" element={<NotFound />} />
             </Routes>
