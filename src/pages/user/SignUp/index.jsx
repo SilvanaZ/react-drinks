@@ -8,7 +8,6 @@ import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
-import Copyright from '../copyright';
 import { Formik } from 'formik';
 import { Link } from 'react-router-dom';
 import useAuth from '../../../hooks/useAuth';
@@ -143,7 +142,6 @@ export default function SignUp() {
                         }
                     </Formik>
                 </Box>
-                <Copyright sx={{ mt: 5 }} />
             </Container>
         </ThemeProvider>
     );
