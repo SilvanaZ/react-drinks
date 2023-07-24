@@ -9,7 +9,6 @@ import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { Formik } from 'formik';
-import Copyright from '../copyright';
 import { Link } from 'react-router-dom';
 import useAuth from '../../../hooks/useAuth';
 
@@ -120,7 +119,6 @@ export default function SignIn() {
                         }
                     </Formik>
                 </Box>
-                <Copyright sx={{ mt: 8, mb: 4 }} />
             </Container>
             <br />
             <br />
