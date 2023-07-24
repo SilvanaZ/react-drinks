@@ -16,3 +16,4 @@
 - levantar proyecto: npm run dev
 
 ## Demo:
+https://react-drinks.vercel.app/
