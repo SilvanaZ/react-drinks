@@ -1,10 +1,9 @@
-.footer {
-    background: linear-gradient(to right, #ff2609, #ffd900);
+.footer {  background: linear-gradient(to right, #4568dc, #fa8072); 
     color: #222;
     text-align: center;
     position: sticky; 
 }
 .footer h1{
-    font-family: "Outfit", sans-serif;
+    font-family: "Outfit", sans-serif Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
     font-weight: 900;
 }

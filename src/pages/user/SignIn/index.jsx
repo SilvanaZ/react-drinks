@@ -9,14 +9,20 @@ import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { Formik } from 'formik';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import useAuth from '../../../hooks/useAuth';
-
+import Home from '../../Home';
 
 const defaultTheme = createTheme();
 
 export default function SignIn() {
     const {login} = useAuth();
+    const navigate = useNavigate();
+
+    const handleLogin = async (values)=>{
+        await login(values);
+        navigate("/");
+    }
 
     return (
         <ThemeProvider theme={defaultTheme}>
@@ -59,7 +65,7 @@ export default function SignIn() {
                             return errors;
                         }}
                         onSubmit={(values) => {
-                        login(values);
+                        handleLogin(values);
                         }}
                     >
                         {
@@ -89,7 +95,7 @@ export default function SignIn() {
                                     fullWidth
                                     name="password"
                                     label="Contraseña"
-                                    type="text"
+                                    type="password"
                                     id="password"
                                     autoFocus
                                     value={values.password}
@@ -104,6 +110,7 @@ export default function SignIn() {
                                         fullWidth
                                         variant="contained"
                                         sx={{ mt: 3, mb: 2 }}
+                                        
                                     >
                                         Ingresar
                                     </Button>

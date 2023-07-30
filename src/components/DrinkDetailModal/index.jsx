@@ -1,5 +1,6 @@
 import { Modal, Image } from 'react-bootstrap';
 import useDrinks from '../../hooks/useDrinks';
+import { style } from "./DetailModalStyle";
 
 export default function DrinkDetailModal () {
     const { modal, handleModalClick, recipe, loading } = useDrinks();

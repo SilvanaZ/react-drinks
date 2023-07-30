@@ -1,5 +1,5 @@
 .header {
-    background: linear-gradient(to right, #ff2609, #ffd900);
+    background: linear-gradient(to right, #4568dc, #fa8072); 
     color: #333;
     text-align: center;
 }
@@ -21,14 +21,14 @@
     padding: 0.5em 2em;
     border: transparent;
     box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
-    background: orangered;
+    background: #8400ff;
     color: white;
     border-radius: 4px;
 }
 
 .btn:hover {
     background: rgb(2, 0, 36);
-    background: linear-gradient(90deg, #ff7b00d0 0%, #ff2609 100%);
+    background: linear-gradient(to right, #4568dc,#fa8072);
 }
 
 .btn:active {

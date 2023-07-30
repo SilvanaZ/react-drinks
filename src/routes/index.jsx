@@ -9,14 +9,13 @@ import SignIn from "../pages/user/SignIn";
 
 export default function AppRoutes () {
     return (
-            <Routes>
-                <Route path="/login" element={<SignIn />} />
-                <Route path="/register" element={<SignUp />} />
-                <Route path="/" element={<ProtectedRoute/>}>
-                    <Route path="/" element={<Home />} />
-                    
-                </Route>
-                <Route path="*" element={<NotFound />} />
-            </Routes>
+        <Routes>
+        <Route path="/login" element={<SignIn />} />
+        <Route path="/register" element={<SignUp />} />
+        <Route path="/" element={<ProtectedRoute />}>
+            <Route path="/" element={<Home />} />
+        </Route>
+        <Route path="*" element={<NotFound />} />
+    </Routes>
     )
 }

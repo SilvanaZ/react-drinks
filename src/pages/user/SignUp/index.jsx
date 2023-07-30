@@ -111,6 +111,7 @@ export default function SignUp() {
                                             <TextField
                                                 margin="normal"
                                                 fullWidth
+                                                type='text'
                                                 id="password"
                                                 label="Password"
                                                 name="password"
@@ -133,7 +134,7 @@ export default function SignUp() {
                                     <Grid container justifyContent="flex-end">
                                         <Grid item>
                                             <Link to="/login" variant="body2">
-                                                Ya tienes una cuenta? Sign in
+                                                ¿Ya tienes una cuenta? Ingresar
                                             </Link>
                                         </Grid>
                                     </Grid>
