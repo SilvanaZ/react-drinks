@@ -1,5 +1,6 @@
 .main{
-    background-color: #00000077;
+    background-image: url('https://img.freepik.com/free-photo/close-up-beer-machine-pub_23-2148872409.jpg?w=1020&t=st=1691092648~exp=1691093248~hmac=8055a5f1c3997b3033267c4d5aa7ec4f4568f2ab7dc9453dbb83909288418f9f');
+    background-size: cover;
     height: auto;
     min-height: 100vh;
 }

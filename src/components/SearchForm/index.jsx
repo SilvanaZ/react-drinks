@@ -1,8 +1,9 @@
-import { Form, Row, Col, Alert } from 'react-bootstrap';
+import { Alert } from 'react-bootstrap';
 import { Formik, Field, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
 import useCategories from '../../hooks/useCategories';
 import useDrinks from '../../hooks/useDrinks';
+import {StyledRow, StyledForm, StyledCol, StyledButton} from './SearchFormStyle'
 
 export default function SearchForm() {
     const { categories } = useCategories();
@@ -28,7 +29,7 @@ export default function SearchForm() {
         >
             {
                 (formik) => (
-                    <Form onSubmit={formik.handleSubmit}>
+                    <StyledForm onSubmit={formik.handleSubmit}>
                         {
                             formik.status && (
                                 <Alert variant="danger" className="text-danger">
@@ -36,32 +37,32 @@ export default function SearchForm() {
                                 </Alert>
                             )
                         }
-                        <Row>
-                            <Col md={6}>
-                                <Form.Group className="mb-3">
-                                    <Form.Label htmlFor='name'>Nombre de bebida</Form.Label>
+                        <StyledRow>
+                            <StyledCol md={6}>
+                                <StyledForm.Group className="mb-3">
+                                    <StyledForm.Label htmlFor='name'>Nombre de bebida</StyledForm.Label>
                                     <Field
                                         id="name"
                                         type="text"
                                         placeholder="Ej: Tequila, Vodka, etc."
                                         name="name"
-                                        as={Form.Control}
+                                        as={StyledForm.Control}
                                     />
                                     <ErrorMessage
                                         name="name"
-                                        component={Form.Text}
+                                        component={StyledForm.Text}
                                         className="text-danger"
                                     />
-                                </Form.Group>
-                            </Col>
-                            <Col md={6}>
-                                <Form.Group className="mb-3">
-                                    <Form.Label htmlFor='category'>Categoria Bebida</Form.Label>
+                                </StyledForm.Group>
+                            </StyledCol>
+                            <StyledCol md={6}>
+                                <StyledForm.Group className="mb-3">
+                                    <StyledForm.Label htmlFor='category'>Categoria Bebida</StyledForm.Label>
                                     <Field
                                         id="category"
                                         placeholder="- Selecciona una categoria -"
                                         name="category"
-                                        as={Form.Select}
+                                        as={StyledForm.Select}
                                     >
                                         <option>- Selecciona una categoria -</option>
                                         {
@@ -82,24 +83,24 @@ export default function SearchForm() {
                                     </Field>
                                     <ErrorMessage
                                         name="category"
-                                        component={Form.Text}
+                                        component={StyledForm.Text}
                                         className="text-danger"
                                     />
-                                </Form.Group>
-                            </Col>
-                        </Row>
-                        <Row className="justify-content-end">
-                            <Col md={3}>
-                                <button
+                                </StyledForm.Group>
+                            </StyledCol>
+                        </StyledRow>
+                        <StyledRow className="justify-content-end">
+                            <StyledCol md={3}>
+                                <StyledButton
                                     className={"btn btn-secondary text-uppercase w-100"}
                                     type="submit"
                                     disabled={loading}
                                 >
                                     {loading ? "Buscando..." : "Buscar Bebidas"}
-                                </button>
-                            </Col>
-                        </Row>
-                    </Form>
+                                </StyledButton>
+                            </StyledCol>
+                        </StyledRow>
+                    </StyledForm>
                 )
             }
         </Formik>
