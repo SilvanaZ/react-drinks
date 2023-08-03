@@ -39,7 +39,7 @@ export default function SearchForm() {
                         <Row>
                             <Col md={6}>
                                 <Form.Group className="mb-3">
-                                    <Form.Label htmlFor='name'>Nombre Bebiba</Form.Label>
+                                    <Form.Label htmlFor='name'>Nombre de bebida</Form.Label>
                                     <Field
                                         id="name"
                                         type="text"
