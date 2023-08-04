@@ -1,9 +1,9 @@
-import { Alert } from 'react-bootstrap';
+import { Form, Alert } from 'react-bootstrap';
 import { Formik, Field, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
 import useCategories from '../../hooks/useCategories';
 import useDrinks from '../../hooks/useDrinks';
-import {StyledRow, StyledForm, StyledCol, StyledButton} from './SearchFormStyle'
+import { StyledRow, StyledCol, StyledButton, StyledFormSelect, StyledFormControl, StyledFormLabel} from './SearchFormStyle.js'
 
 export default function SearchForm() {
     const { categories } = useCategories();
@@ -29,7 +29,7 @@ export default function SearchForm() {
         >
             {
                 (formik) => (
-                    <StyledForm onSubmit={formik.handleSubmit}>
+                    <Form onSubmit={formik.handleSubmit}>
                         {
                             formik.status && (
                                 <Alert variant="danger" className="text-danger">
@@ -39,30 +39,30 @@ export default function SearchForm() {
                         }
                         <StyledRow>
                             <StyledCol md={6}>
-                                <StyledForm.Group className="mb-3">
-                                    <StyledForm.Label htmlFor='name'>Nombre de bebida</StyledForm.Label>
+                                <Form.Group className="mb-3">
+                                    <StyledFormLabel><strong> Nombre de bebida</strong></StyledFormLabel>
                                     <Field
                                         id="name"
                                         type="text"
                                         placeholder="Ej: Tequila, Vodka, etc."
                                         name="name"
-                                        as={StyledForm.Control}
+                                        as={StyledFormControl}
                                     />
                                     <ErrorMessage
                                         name="name"
-                                        component={StyledForm.Text}
+                                        component={Form.Text}
                                         className="text-danger"
                                     />
-                                </StyledForm.Group>
+                                </Form.Group>
                             </StyledCol>
                             <StyledCol md={6}>
-                                <StyledForm.Group className="mb-3">
-                                    <StyledForm.Label htmlFor='category'>Categoria Bebida</StyledForm.Label>
+                                <Form.Group className="mb-3">
+                                    <StyledFormLabel><strong > Categoria Bebida</strong></StyledFormLabel>
                                     <Field
                                         id="category"
                                         placeholder="- Selecciona una categoria -"
                                         name="category"
-                                        as={StyledForm.Select}
+                                        as={StyledFormSelect}
                                     >
                                         <option>- Selecciona una categoria -</option>
                                         {
@@ -83,10 +83,10 @@ export default function SearchForm() {
                                     </Field>
                                     <ErrorMessage
                                         name="category"
-                                        component={StyledForm.Text}
+                                        component={Form.Text}
                                         className="text-danger"
                                     />
-                                </StyledForm.Group>
+                                </Form.Group>
                             </StyledCol>
                         </StyledRow>
                         <StyledRow className="justify-content-end">
@@ -100,7 +100,7 @@ export default function SearchForm() {
                                 </StyledButton>
                             </StyledCol>
                         </StyledRow>
-                    </StyledForm>
+                    </Form>
                 )
             }
         </Formik>

@@ -9,7 +9,8 @@ export default function DrinkList () {
     if(drinks.length === 0) {
         return (
             <Row className="p-5 m-5">
-                <h1 className="text-center"> No Hay Recetas</h1>
+                <h1 className="text-center"> No has elegido una bebida</h1>
+                <p>Somos un sitio donde podes buscar las recetas de las bebidas que más te gusten </p>
             </Row>
         )
     }
