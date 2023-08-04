@@ -9,7 +9,6 @@ import {
   StyledIngredients } 
 from "./DetailModalStyle";
 
-
 export default function DrinkDetailModal () {
     const { modal, handleModalClick, recipe, loading } = useDrinks();
     function showIngredients () {
