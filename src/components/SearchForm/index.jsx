@@ -1,8 +1,16 @@
+<<<<<<< Updated upstream
 import { Form, Row, Col, Alert } from 'react-bootstrap';
+=======
+import { Form, Alert } from 'react-bootstrap';
+>>>>>>> Stashed changes
 import { Formik, Field, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
 import useCategories from '../../hooks/useCategories';
 import useDrinks from '../../hooks/useDrinks';
+<<<<<<< Updated upstream
+=======
+import { StyledRow, StyledCol, StyledButton, StyledFormSelect, StyledFormControl, StyledFormLabel} from './SearchFormStyle.js'
+>>>>>>> Stashed changes
 
 export default function SearchForm() {
     const { categories } = useCategories();
@@ -36,16 +44,27 @@ export default function SearchForm() {
                                 </Alert>
                             )
                         }
+<<<<<<< Updated upstream
                         <Row>
                             <Col md={6}>
                                 <Form.Group className="mb-3">
                                     <Form.Label htmlFor='name'>Nombre Bebiba</Form.Label>
+=======
+                        <StyledRow>
+                            <StyledCol md={6}>
+                                <Form.Group className="mb-3">
+                                    <StyledFormLabel><strong> Nombre de bebida</strong></StyledFormLabel>
+>>>>>>> Stashed changes
                                     <Field
                                         id="name"
                                         type="text"
                                         placeholder="Ej: Tequila, Vodka, etc."
                                         name="name"
+<<<<<<< Updated upstream
                                         as={Form.Control}
+=======
+                                        as={StyledFormControl}
+>>>>>>> Stashed changes
                                     />
                                     <ErrorMessage
                                         name="name"
@@ -53,15 +72,26 @@ export default function SearchForm() {
                                         className="text-danger"
                                     />
                                 </Form.Group>
+<<<<<<< Updated upstream
                             </Col>
                             <Col md={6}>
                                 <Form.Group className="mb-3">
                                     <Form.Label htmlFor='category'>Categoria Bebida</Form.Label>
+=======
+                            </StyledCol>
+                            <StyledCol md={6}>
+                                <Form.Group className="mb-3">
+                                    <StyledFormLabel><strong > Categoria Bebida</strong></StyledFormLabel>
+>>>>>>> Stashed changes
                                     <Field
                                         id="category"
                                         placeholder="- Selecciona una categoria -"
                                         name="category"
+<<<<<<< Updated upstream
                                         as={Form.Select}
+=======
+                                        as={StyledFormSelect}
+>>>>>>> Stashed changes
                                     >
                                         <option>- Selecciona una categoria -</option>
                                         {
@@ -86,19 +116,33 @@ export default function SearchForm() {
                                         className="text-danger"
                                     />
                                 </Form.Group>
+<<<<<<< Updated upstream
                             </Col>
                         </Row>
                         <Row className="justify-content-end">
                             <Col md={3}>
                                 <button
+=======
+                            </StyledCol>
+                        </StyledRow>
+                        <StyledRow className="justify-content-end">
+                            <StyledCol md={3}>
+                                <StyledButton
+>>>>>>> Stashed changes
                                     className={"btn btn-secondary text-uppercase w-100"}
                                     type="submit"
                                     disabled={loading}
                                 >
                                     {loading ? "Buscando..." : "Buscar Bebidas"}
+<<<<<<< Updated upstream
                                 </button>
                             </Col>
                         </Row>
+=======
+                                </StyledButton>
+                            </StyledCol>
+                        </StyledRow>
+>>>>>>> Stashed changes
                     </Form>
                 )
             }

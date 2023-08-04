@@ -1,6 +1,11 @@
 .header {
+<<<<<<< Updated upstream
     background: linear-gradient(to right, #ff2609, #ffd900);
     color: #333;
+=======
+    background: radial-gradient(circle, rgba(152,217,241,0.8911939775910365) 0%, rgba(246,139,161,0.8155637254901961) 100%);; 
+    color: #111;
+>>>>>>> Stashed changes
     text-align: center;
 }
 
