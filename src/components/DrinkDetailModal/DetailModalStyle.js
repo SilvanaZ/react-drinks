@@ -5,9 +5,7 @@ import {
 } from 'react-bootstrap';
 
 export const StyledModal = styled(Modal)`
-background-color: #f5f5f5;
-border-radius: 8px;
-max-width: 600px;
+background-color: transparent;
 margin: 0 auto;
 `;
 
@@ -17,8 +15,8 @@ height: auto;
 `;
 
 export const StyledModalHeader = styled(Modal.Header)`
-background-color: #007bff;
-color: #fff;
+background-color: purple;
+color: #777;
 `;
 
 export const StyledModalTitle = styled(Modal.Title)`
@@ -27,18 +25,19 @@ font-weight: bold;
 `;
 
 export const StyledModalBody = styled(Modal.Body)`
-  // Estilos para el cuerpo del modal
 padding: 15px;
+background-color: gray;
+color: lightblue;
 `;
 
-export const StyledInstructions = styled.div `
+export const StyledInstructions = styled.div`
 h2 {
     font-size: 20px;
     margin-bottom: 10px;
 }
 `;
 
-export const StyledIngredients = styled.div `
+export const StyledIngredients = styled.div`
 h2 {
     font-size: 20px;
     margin-bottom: 10px;
