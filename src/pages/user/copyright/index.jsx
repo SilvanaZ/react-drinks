@@ -1,16 +1,14 @@
-import { Typography } from "@mui/material";
-import { Link } from "react-router-dom";
-
+import { StyledTypography,StyledLink } from './StyledCopyright.js'
 
 export default function Copyright(props) {
     return (
-        <Typography variant="body2" color="text.secondary" align="center" {...props}>
+        <StyledTypography {...props}>
             {'Copyright © to '}
-            <Link color="inherit" to="https://github.com/silvanaZ/react-drinks/">
+            <StyledLink to="https://github.com/silvanaZ/react-drinks/">
                 <strong>Silvana Zalazar ✨ </strong>
-            </Link>{' '}
+            </StyledLink>{' '}
             {new Date().getFullYear()}
             {'.'}
-        </Typography>
+        </StyledTypography>
     );
 }

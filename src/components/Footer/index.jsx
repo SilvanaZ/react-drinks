@@ -1,11 +1,11 @@
 import Copyright from "../../pages/user/copyright";
-import styles from "./Footer.module.css";
+import { StyledFooter } from "./StyledFooter.js";
 
-export default function Footer () {
+export default function Footer() {
     return (
-        <footer className={`py-5 ${styles.footer}`}>
-            <Copyright/>
-        </footer>
-        
-    )
+        <StyledFooter>
+            <br />
+            <Copyright />
+        </StyledFooter>
+    );
 }

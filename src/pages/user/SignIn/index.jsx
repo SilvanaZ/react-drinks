@@ -1,134 +1,114 @@
-import Avatar from '@mui/material/Avatar';
-import Button from '@mui/material/Button';
-import CssBaseline from '@mui/material/CssBaseline';
-import TextField from '@mui/material/TextField';
-import Grid from '@mui/material/Grid';
-import Box from '@mui/material/Box';
-import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
-import Typography from '@mui/material/Typography';
-import Container from '@mui/material/Container';
-import { createTheme, ThemeProvider } from '@mui/material/styles';
 import { Formik } from 'formik';
-import { Link, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 import useAuth from '../../../hooks/useAuth';
-import Home from '../../Home';
-
-const defaultTheme = createTheme();
+import {
+    StyledContainer,
+    StyledAvatar,
+    StyledTitle,
+    StyledTextField,
+    StyledButton,
+    StyledLink,
+    StyledBox
+} from './StyledSignIn';
+import { Box, CssBaseline, Grid } from '@mui/material';
+import LockOutlinedIcon from '@mui/icons-material/LockOutlined';
 
 export default function SignIn() {
-    const {login} = useAuth();
+    const { login } = useAuth();
     const navigate = useNavigate();
 
-    const handleLogin = async (values)=>{
+    const handleLogin = async (values) => {
         await login(values);
         navigate("/");
-    }
+    };
 
     return (
-        <ThemeProvider theme={defaultTheme}>
-            <Container component="main" maxWidth="xs">
-                <CssBaseline />
-                <Box
-                    sx={{
-                        marginTop: 8,
-                        display: 'flex',
-                        flexDirection: 'column',
-                        alignItems: 'center',
+        <StyledContainer component="main" maxWidth="xs">
+            <CssBaseline />
+            <StyledBox>
+                <StyledAvatar>
+                    <LockOutlinedIcon />
+                </StyledAvatar>
+                <StyledTitle component="h1" variant="h5">
+                    Ingresar
+                </StyledTitle>
+
+                <Formik
+                    initialValues={{
+                        password: "",
+                        email: "",
+                    }}
+                    validate={(values) => {
+                        const errors = {};
+                        const regexpEmail = /^[A-Z0-9._%+-]+@[A-Z0-9*-]+\.[A-Z]{2,}$/i;
+
+                        if (!values.email) {
+                            errors.email = "Email requerido";
+                        } else if (!regexpEmail.test(values.email)) {
+                            errors.email = "Email inválido";
+                        }
+
+                        if (!values.password) {
+                            errors.password = "Contraseña requerida";
+                        }
+
+                        return errors;
+                    }}
+                    onSubmit={(values) => {
+                        handleLogin(values);
                     }}
                 >
-                    <Avatar sx={{ m: 1, bgcolor: 'secondary.main' }}>
-                        <LockOutlinedIcon />
-                    </Avatar>
-                    <Typography component="h1" variant="h5">
-                        Ingresar
-                    </Typography>
+                    {({
+                        values,
+                        errors,
+                        touched,
+                        handleChange,
+                        handleBlur,
+                        handleSubmit,
+                    }) => (
+                        <Box component="form" onSubmit={handleSubmit} noValidate sx={{ mt: 1 }}>
+                            <StyledTextField
+                                fullWidth
+                                id="email"
+                                label="Email"
+                                name="email"
+                                value={values.email}
+                                error={errors.email && touched.email}
+                                onChange={handleChange}
+                                onBlur={handleBlur}
+                                helperText={errors.email && touched.email && errors.email}
+                            />
+                            <StyledTextField
+                                fullWidth
+                                name="password"
+                                label="Contraseña"
+                                type="password"
+                                id="password"
+                                value={values.password}
+                                error={errors.password && touched.password}
+                                onChange={handleChange}
+                                onBlur={handleBlur}
+                                helperText={errors.password && touched.password && errors.password}
+                            />
 
-                    <Formik
-                        initialValues={{
-                            password: "",
-                            email: "",
-                        }}
-                        validate={(values) => {
-                            const errors = {};
-                            const regexpEmail = /^[A-Z0-9._%+-]+@[A-Z0-9*-]+\.[A-Z]{2,}$/i;
-
-                            if (!values.email) {
-                                errors.email = "Email requerido"
-                            } else if (!regexpEmail.test(values.email)) {
-                                errors.email = "Email inválido"
-                            }
-
-                            if (!values.password) {
-                                errors.password = "Contraseña requerido";
-                            }
-
-                            return errors;
-                        }}
-                        onSubmit={(values) => {
-                        handleLogin(values);
-                        }}
-                    >
-                        {
-                            ({
-                                values,
-                                errors,
-                                touched,
-                                handleChange,
-                                handleBlur,
-                                handleSubmit,
-                            }) => (
-                                <Box component="form" onSubmit={handleSubmit} noValidate sx={{ mt: 1 }}>
-                                    <TextField
-                                        margin="normal"
-                                        fullWidth
-                                        id="email"
-                                        label="Email"
-                                        name="email"
-                                        value={values.email}
-                                        error={errors.email && touched.email}
-                                        onChange={handleChange}
-                                        onBlur={handleBlur}
-                                        helperText={errors.email && touched.email && errors.email}
-                                    />
-                                    <TextField
-                                    margin="normal"
-                                    fullWidth
-                                    name="password"
-                                    label="Contraseña"
-                                    type="password"
-                                    id="password"
-                                    autoFocus
-                                    value={values.password}
-                                    error={errors.password && touched.password}
-                                    onChange={handleChange}
-                                    onBlur={handleBlur}
-                                    helperText={errors.password && touched.password && errors.password}
-                                />
-
-                                    <Button
-                                        type="submit"
-                                        fullWidth
-                                        variant="contained"
-                                        sx={{ mt: 3, mb: 2 }}
-                                        
-                                    >
-                                        Ingresar
-                                    </Button>
-                                    <Grid container>
-                                        <Grid item>
-                                            <Link to="/register" variant="body2">
-                                                {"¿No tienes una cuenta? Registrate"}
-                                            </Link>
-                                        </Grid>
-                                    </Grid>
-                                </Box>
-                            )
-                        }
-                    </Formik>
-                </Box>
-            </Container>
-            <br />
-            <br />
-        </ThemeProvider >
+                            <StyledButton
+                                type="submit"
+                                fullWidth
+                                variant="contained"
+                            >
+                                Ingresar
+                            </StyledButton>
+                            <Grid container>
+                                <StyledLink item>
+                                    <a href="/register">
+                                        {"¿No tienes una cuenta? Registrate"}
+                                    </a>
+                                </StyledLink>
+                            </Grid>
+                        </Box>
+                    )}
+                </Formik>
+            </StyledBox>
+        </StyledContainer>
     );
 }

@@ -13,6 +13,8 @@ export default function MainLayout ({children}) {
                 {children}
             </Container>
             <CartModal />
+            <br />
+            <br />
             <Footer />
         </div>
 
