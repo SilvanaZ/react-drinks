@@ -19,8 +19,7 @@ export default function SignUp() {
     return (
         <StyledContainer component="main" maxWidth="xs">
             <CssBaseline />
-            <StyledBox
-            >
+            <StyledBox>
                 <StyledAvatar>
                     <LockOutlinedIcon />
                 </StyledAvatar>
